@@ -1,0 +1,338 @@
+/* ===== 基础 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #6c5ce7;
+  --primary-light: #a29bfe;
+  --bg: #f6f7fb;
+  --card-bg: #ffffff;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --border: #e8eaf1;
+  --hot: #ff6b6b;
+  --shadow: 0 4px 20px rgba(108, 92, 231, 0.08);
+  --radius: 14px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== 顶部横幅 ===== */
+.hero {
+  background: linear-gradient(135deg, #6c5ce7 0%, #8e7cf3 45%, #a29bfe 100%);
+  padding: 56px 20px 48px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.site-title {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.site-subtitle {
+  font-size: 15px;
+  opacity: 0.92;
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== 搜索框 ===== */
+.search-box {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.search-box input:focus {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+}
+
+.search-box input::placeholder {
+  color: #b2bec3;
+}
+
+/* ===== 分类栏 ===== */
+.cat-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(246, 247, 251, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.cat-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-light);
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.cat-btn:hover {
+  border-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.cat-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== 分类分区 ===== */
+.cat-section {
+  scroll-margin-top: 70px;
+}
+
+.sec-head {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 26px 16px 0;
+}
+
+.sec-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  position: relative;
+  padding-left: 14px;
+}
+
+.sec-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 20px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--primary), var(--primary-light));
+}
+
+/* ===== 工具网格 ===== */
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 16px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.tool-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(108, 92, 231, 0.16);
+  border-color: var(--primary-light);
+}
+
+.tool-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tool-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+/* 真实图标（favicon）容器 */
+.tool-icon-img {
+  overflow: hidden;
+  background: #fff !important;
+  border: 1px solid var(--border);
+  text-shadow: none;
+}
+
+.tool-icon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 7px;
+  display: block;
+}
+
+.tool-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tool-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.badge-hot {
+  background: var(--hot);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.badge-earn {
+  background: #00b894;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.tool-cat {
+  font-size: 12px;
+  color: var(--primary);
+  background: rgba(108, 92, 231, 0.08);
+  padding: 3px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.tool-desc {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.tool-go {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.tool-go .arrow {
+  transition: transform 0.2s;
+}
+
+.tool-card:hover .tool-go .arrow {
+  transform: translateX(3px);
+}
+
+/* ===== 空状态 ===== */
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-light);
+  padding: 60px 0;
+  font-size: 15px;
+}
+
+/* ===== 底部 ===== */
+.footer {
+  text-align: center;
+  padding: 28px 16px;
+  color: var(--text-light);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+
+.footer-tip {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 640px) {
+  .site-title {
+    font-size: 30px;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    padding: 18px 12px 30px;
+  }
+  .tool-card {
+    padding: 16px 14px;
+  }
+  .tool-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+}
