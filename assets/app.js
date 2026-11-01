@@ -648,6 +648,17 @@ const tools = [
     earn: false
   },
 
+  {
+    name: "agent-qa",
+    cat: "编程开发",
+    desc: "自然语言 Web、Android 与 iOS 测试，结合 memidex 持久记忆和经验证的自我改进。",
+    url: "https://vostride.com",
+    aff: "",
+    domain: "vostride.com",
+    hot: false,
+    earn: false
+  },
+
   /* ================= AI音频 ================= */
   {
     name: "Suno",
